@@ -1,4 +1,18 @@
-(ns fiction-generator.core)
+(ns fiction-generator.core
+	(:use [fiction-generator.data]))
 
-(defn create-story [story-elements]
-	{:title "La"})
+(def r (new java.util.Random))
+
+(defn random [upper-limit]
+	(. r nextInt upper-limit))
+
+(defn select [choices]
+	(get choices (random (count choices))))
+
+(defn create-title [story-elements]
+	(format "The %s%s" (select (:title-start story-elements)) (select (:title-end story-elements))))
+
+(defn create-story
+	[story-elements]
+	{:title (create-title story-elements)})
+
