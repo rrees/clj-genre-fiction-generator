@@ -1,7 +1,7 @@
 (ns clj-genre-fiction-generator.core-test
   (:use [fiction-generator.core] :reload-all)
-	(:use [fiction-generator.data])
-  (:use [clojure.test]))
+	(:use fiction-generator.data)
+  (:use clojure.test))
 
 (defn not-empty? [p]
 	(if (nil? p) false)
