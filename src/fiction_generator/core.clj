@@ -16,8 +16,3 @@
 	[story-elements]
 	{:title (create-title story-elements)})
 
-(defn story-blurb
-	(let [story (create-story story-elements)
-		title (:title story)
-		blurb (:blurb story)]
-	(println (format "%s\n%s" title blurb))))
