@@ -1,3 +1,4 @@
 (ns fiction-generator.core)
 
-(defn create-story [story-elements] {})
+(defn create-story [story-elements]
+	{:title "La"})
