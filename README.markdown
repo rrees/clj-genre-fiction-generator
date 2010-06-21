@@ -1,6 +1,6 @@
 # clj-genre-fiction-generator
 
-FIXME: write description
+A Clojure implementation of the [Wondermark Genre Fiction Generator]:(http://wondermark.com/554/)
 
 ## Usage
 
