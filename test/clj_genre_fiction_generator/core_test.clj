@@ -6,7 +6,8 @@
 (def story-choices
 	{:title-start ["Robin"]
 		:title-end ["Hood"]
-		:locations ["America"]})
+		:locations ["America"]
+		:moods ["gloomy"]})
 
 (defn not-empty? [p]
 	(if (nil? p) false)
@@ -27,3 +28,7 @@
 	(is (= (get (:title-start story-choices) 0) "Robin"))
 		(is (= (count (:title-start story-choices)) 1))
 		(is (= (:title (create-story story-choices)) "The RobinHood")))
+
+(deftest should-have-a-mood
+	(let [mood (:mood (create-story story-choices))]
+		(is (= mood "gloomy"))))

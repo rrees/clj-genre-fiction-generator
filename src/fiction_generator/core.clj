@@ -1,5 +1,6 @@
 (ns fiction-generator.core
-	(:use fiction-generator.data))
+	(:use fiction-generator.data)
+	(:use fiction-generator.text))
 
 (def r (new java.util.Random))
 
@@ -15,10 +16,11 @@
 (defn create-story
 	[story-elements]
 	{:title (create-title story-elements)
-		:location (select (:locations story-elements))})
+		:location (select (:locations story-elements))
+		:mood (select (:moods story-elements))})
 
 (defn blurb [story-choices]
-	(format "In a %s" (:location story-choices)))
+	(format "In %s %s" (a (:mood story-choices)) (:location story-choices)))
 
 (defn story-blurb
 	[] (let [story (create-story story-elements) title (:title story) blurb (blurb story)]

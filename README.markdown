@@ -4,12 +4,14 @@ FIXME: write description
 
 ## Usage
 
-FIXME: write
+* lein repl
+* (use 'fiction-generator.core)
+* (story-blurb)
 
 ## Installation
 
-FIXME: write
+Not installable yet
 
 ## License
 
-FIXME: write
+GPL v3
