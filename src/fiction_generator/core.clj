@@ -17,7 +17,9 @@
 	[story-elements]
 	{:title (create-title story-elements)
 		:location (select (:locations story-elements))
-		:mood (select (:moods story-elements))})
+		:mood (select (:moods story-elements))
+		:macguffin (select (:macguffins story-elements))
+		:conclusion (select (:conclusions story-elements))})
 
 (defn blurb [story-choices]
 	(format "In %s %s" (a (:mood story-choices)) (:location story-choices)))

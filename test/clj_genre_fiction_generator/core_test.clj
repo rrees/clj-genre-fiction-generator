@@ -7,7 +7,9 @@
 	{:title-start ["Robin"]
 		:title-end ["Hood"]
 		:locations ["America"]
-		:moods ["gloomy"]})
+		:moods ["gloomy"]
+		:macguffins ["suitcase"]
+		:conclusions ["fight"]})
 
 (defn not-empty? [p]
 	(if (nil? p) false)
@@ -15,7 +17,7 @@
 	true)
 
 (deftest should-have-a-title-for-the-story
-  (is (= (not-empty? (:title (create-story fiction-generator.data/story-elements))) true)))
+  (is (= (not-empty? (:title (create-story story-choices))) true)))
 
 (deftest should-select-the-only-option-available
 	(is (= (select ["A thing"]) "A thing")))
@@ -32,3 +34,11 @@
 (deftest should-have-a-mood
 	(let [mood (:mood (create-story story-choices))]
 		(is (= mood "gloomy"))))
+
+(deftest should-have-a-macguffin
+	(let [macguffin (:macguffin (create-story story-choices))]
+		(is (= macguffin "suitcase"))))
+
+(deftest should-have-a-conclusion
+	(let [conclusion (:conclusion (create-story story-choices))]
+		(is (= conclusion "fight"))))
