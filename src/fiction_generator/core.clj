@@ -22,7 +22,11 @@
 		:conclusion (select (:conclusions story-elements))})
 
 (defn blurb [story-choices]
-	(format "In %s %s" (a (:mood story-choices)) (:location story-choices)))
+	(format "In %s %s stumbles across %s culminating in %s"
+		(a (:mood story-choices))
+		(:location story-choices)
+		(a (:macguffin story-choices))
+		(:conclusion story-choices)))
 
 (defn story-blurb
 	[] (let [story (create-story story-elements) title (:title story) blurb (blurb story)]
