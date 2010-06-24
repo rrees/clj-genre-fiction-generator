@@ -21,7 +21,8 @@
 		:macguffin (select (:macguffins story-elements))
 		:conclusion (select (:conclusions story-elements))
 		:hero (select (:heroes story-elements))
-		:heroine (select (:heroines story-elements))})
+		:heroine (select (:heroines story-elements))
+		:villain (select (:villains story-elements))})
 
 (defn blurb [story-choices]
 	(format "In %s %s stumbles across %s culminating in %s"
