@@ -9,7 +9,9 @@
 		:locations ["America"]
 		:moods ["gloomy"]
 		:macguffins ["suitcase"]
-		:conclusions ["fight"]})
+		:conclusions ["fight"]
+		:heroes ["Joe"]
+		:heroines ["Shelia"]})
 
 (defn not-empty? [p]
 	(if (nil? p) false)
@@ -42,3 +44,7 @@
 (deftest should-have-a-conclusion
 	(let [conclusion (:conclusion (create-story story-choices))]
 		(is (= conclusion "fight"))))
+
+(deftest should-have-a-hero
+	(let [hero (:hero (create-story story-choices))]
+		(is (= hero "Joe"))))
