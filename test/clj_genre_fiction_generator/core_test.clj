@@ -12,7 +12,8 @@
 		:conclusions ["fight"]
 		:heroes ["Joe"]
 		:heroines ["Sheila"]
-		:villains ["Bush"]})
+		:villains ["Bush"]
+		:gimmicks ["spanner"]})
 
 (defn not-empty? [p]
 	(if (nil? p) false)
@@ -57,3 +58,7 @@
 (deftest should-have-a-hero
 	(let [villain (:villain (create-story story-choices))]
 		(is (= villain "Bush"))))
+
+(deftest should-have-a-gimmick
+	(let [gimmick (:gimmick (create-story story-choices))]
+		(is (= gimmick "spanner"))))

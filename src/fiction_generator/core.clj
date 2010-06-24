@@ -22,13 +22,16 @@
 		:conclusion (select (:conclusions story-elements))
 		:hero (select (:heroes story-elements))
 		:heroine (select (:heroines story-elements))
-		:villain (select (:villains story-elements))})
+		:villain (select (:villains story-elements))
+		:gimmick (select (:gimmicks story-elements))})
 
 (defn blurb [story-choices]
-	(format "In %s %s stumbles across %s culminating in %s"
+	(format "In %s %s stumbles across %s which spurs him into conflict with %s with the help of a %s and her %s culminating in %s"
 		(a (:mood story-choices))
 		(:location story-choices)
 		(a (:macguffin story-choices))
+		(:villain story-choices)
+		(:heroine story-choices)
 		(:conclusion story-choices)))
 
 (defn story-blurb
