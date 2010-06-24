@@ -11,7 +11,7 @@
 		:macguffins ["suitcase"]
 		:conclusions ["fight"]
 		:heroes ["Joe"]
-		:heroines ["Shelia"]})
+		:heroines ["Sheila"]})
 
 (defn not-empty? [p]
 	(if (nil? p) false)
@@ -48,3 +48,7 @@
 (deftest should-have-a-hero
 	(let [hero (:hero (create-story story-choices))]
 		(is (= hero "Joe"))))
+
+(deftest should-have-a-hero
+	(let [heroine (:heroine (create-story story-choices))]
+		(is (= heroine "Sheila"))))
